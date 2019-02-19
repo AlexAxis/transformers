@@ -1,12 +1,19 @@
 {
   "name": "transformers",
   "version": "1.0.0",
-  "description": "",
+  "description": "war between Autobots and Decepticons",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidNogueira/transformers.git"
+  },
+  "author": "David&Alexis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidNogueira/transformers/issues"
+  },
+  "homepage": "https://github.com/DavidNogueira/transformers#readme"
 }
