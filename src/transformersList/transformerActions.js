@@ -2,7 +2,7 @@ import axios from 'axios'
 const URL = 'http://localhost:3000/db'
 
 /**
- * This funciton is responsible to fetch(axios!?) the data 
+ * This funciton is responsible to fetch the data 
  */
 export const fetch = () => {
 
