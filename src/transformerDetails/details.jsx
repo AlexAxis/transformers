@@ -1,15 +1,16 @@
 import React from 'react'
 
-export default props => (
+export default props => {
+    const x = props.params.id
+    return (
     <div>
-    <h1></h1>
-        <h2>Contacts</h2>
-        <p>some description</p>
-        <h2>mission and values</h2>
-        <p>me me me</p>
-        <h2>Social networks</h2>
-        <p>Linkdin</p>
-        <p>Facebook</p>
+        <h1>Transformer id nª{x} </h1>
+
 
     </div>
 )
+}
+//this.props.match.params.redirectParam
+//this.props.params.redirectParam
+
+
