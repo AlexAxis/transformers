@@ -1,16 +1,29 @@
 import React, { Component } from 'react';
 import { TouchableOpacity } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 
-const ListItem = props => {
 
-    const { transformer, id } = props;
-    return (
-        <tr onClick={() => <li><Link to={`/transformerDetails/${id} `}>algo</Link></li>}>
+
+class ListItem extends React.Component {
+
+    render() {
+        const { transformer, id } = this.props;
+
+        return (
+            <tr onClick={() => this.props.router.push(`/transformerDetails/${id}`)}>
                 <td>{transformer}</td>
                 <td>{id}</td>
-        </tr>
-    );
-}
-export default ListItem;
+            </tr>
+        )
+    }
+};
+
+// Export the decorated class
+export default withRouter(ListItem);
+
+//`this.props.router.push('/transformerDetails')`
+
+//<Link to={`/transformerDetails/${id} `}>algo</Link>
+
+// use `this.props.router.push('/some/path')` here
