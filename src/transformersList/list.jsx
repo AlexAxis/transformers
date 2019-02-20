@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { fetch } from './transformerActions'
+//import { fetch } from './transformerActions'
 
 
 
@@ -18,7 +18,7 @@ const List = props => {
             <ListItem
                 key={transformers.id}
                 transformer={transformers.name}
-                navigateToTransformerDetail={fetch}
+                //navigateToTransformerDetail={fetch}
                 id={transformers.id}
             />
         ))
