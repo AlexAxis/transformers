@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux'
-import transformerReducer from '../transformersList/transformerReducers'
+import transformerReducer from './transformerReducers'
 
 const rootReducer= combineReducers({
     transformer: transformerReducer

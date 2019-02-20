@@ -8,6 +8,7 @@ export default props => (
     <Router history={hashHistory}>
     <Route path='/transformersList' component={TransformersList}/>
     <Route path='/transformerDetails' component={TransformerDetails}/>
+    <Route path='/transformerDetails/:id' component={TransformerDetails}/>
     <Redirect from='*' to = '/transformersList'/>
     </Router>
 )

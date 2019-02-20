@@ -2,49 +2,49 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { search } from './transformerActions'
+//import { fetch } from './transformerActions'
 
-const List = props =>{
+
+
+import ListItem from './listItem'
+
+const List = props => {
 
     const renderRows = () => {
-        // const { search, list } = this.props;
-        console.log(props.list)
-        const list2 = props.list.transformers || []
-        return list2.map(transformers => (
-            <tr key={transformers.id}>
-                <td>
-                    {transformers.name}
-                </td>
+        const { fetch, list } = props;
+        const list2 = list.transformers || []
 
-                <td>
-                    {transformers.id}
-                </td>
-            </tr>
+        return list2.map(transformers => (
+            <ListItem
+                key={transformers.id}
+                transformer={transformers.name}
+                //navigateToTransformerDetail={fetch}
+                id={transformers.id}
+            />
         ))
     }
 
+    return (
+        <table className='table'>
+            <thead>
+                <tr>
+                    <th>Transformers</th>
+                    <th className='tableActions'>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {renderRows()}
+            </tbody>
+        </table>
+    )
 
-
-        return (
-            <table className='table'>
-                <thead>
-                    <tr>
-                        <th>Transformers</th>
-                        <th className='tableActions'>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {renderRows()}
-                </tbody>
-            </table>
-        )
-    
 
 
 }
 
 
+
 const mapStateToProps = state => ({ list: state.transformer.list })
-const mapDispatchToProps = dispatch => bindActionCreators({ search }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ fetch }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(List)
