@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { search } from './transformerActions'
+import { fetch } from './transformerActions'
 
 import List from './list'
 
@@ -13,7 +13,7 @@ class Transformers extends Component {
 
 
     componentWillMount() {
-        this.props.search()
+        this.props.fetch()
     }
 
     render() {
@@ -28,6 +28,6 @@ class Transformers extends Component {
 }
 
 const mapStateToProps = state => ({ list: state.transformer.list })
-const mapDispatchToProps = dispatch => bindActionCreators({ search }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ fetch }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Transformers)

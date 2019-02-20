@@ -2,14 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { search } from './transformerActions'
+import { fetch } from './transformerActions'
 
 const List = props =>{
 
     const renderRows = () => {
-        // const { search, list } = this.props;
-        console.log(props.list)
-        const list2 = props.list.transformers || []
+        const { fetch, list } = props;
+        const list2 = list.transformers || []
         return list2.map(transformers => (
             <tr key={transformers.id}>
                 <td>
@@ -22,8 +21,6 @@ const List = props =>{
             </tr>
         ))
     }
-
-
 
         return (
             <table className='table'>
@@ -45,6 +42,6 @@ const List = props =>{
 
 
 const mapStateToProps = state => ({ list: state.transformer.list })
-const mapDispatchToProps = dispatch => bindActionCreators({ search }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ fetch }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(List)

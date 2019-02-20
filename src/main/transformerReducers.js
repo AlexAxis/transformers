@@ -6,7 +6,7 @@ const INITIAL_STATE = {
 export default function (state = INITIAL_STATE, action) {
 
     switch (action.type) {
-        case 'TRANSFORMER_SEARCHED':
+        case 'TRANSFORMER_FETCH':
             return { ...state, list: action.payload }
         default:
             return state
