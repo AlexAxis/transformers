@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
     list: [],
+    faction: 'all',
     name: ''
 }
 //as ACÇÕES
@@ -11,6 +12,8 @@ export default function (state = INITIAL_STATE, action) {
             return { ...state, name: action.payload }
         case 'TRANSFORMER_FETCH':
             return { ...state, list: action.payload }
+        case 'FACTION_CHANGE':
+        return { ...state, faction: action.payload }
 
         default:
             return state

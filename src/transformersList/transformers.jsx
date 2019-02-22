@@ -5,7 +5,8 @@ import { bindActionCreators } from 'redux'
 import { fetch } from './transformerActions'
 
 import List from './list'
-import SearchByName from './searchByName'
+import RadioFilter from './RadioFilter'
+import NameFilter from './nameFilter'
 
 class Transformers extends Component {
     constructor(props) {
@@ -21,7 +22,8 @@ class Transformers extends Component {
         return (
             <div>
                 <List />
-                <SearchByName />
+                <RadioFilter />
+                <NameFilter />
             </div>
         )
     }

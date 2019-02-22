@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 
 import { changeName } from './transformerActions'
 
-const SearchByName = props => {
+const nameFilter = props => {
 
 
         const { name, changeName} = props
@@ -26,4 +26,4 @@ const SearchByName = props => {
 const mapStateToProps = state => ({ name: state.transformer.name })
 const mapDispatchToProps = dispatch => bindActionCreators({ changeName }, dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchByName)
+export default connect(mapStateToProps, mapDispatchToProps)(nameFilter)
