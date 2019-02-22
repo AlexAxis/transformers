@@ -10,7 +10,5 @@ export default props => {
     </div>
 )
 }
-//this.props.match.params.redirectParam
-//this.props.params.redirectParam
 
 
