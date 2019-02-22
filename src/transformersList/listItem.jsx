@@ -16,4 +16,3 @@ class ListItem extends React.Component {
 };
 // Export the decorated class
 export default withRouter(ListItem);
-
