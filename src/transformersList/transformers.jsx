@@ -6,6 +6,7 @@ import { fetch } from './transformerActions'
 
 import List from './list'
 import RadioFilter from './RadioFilter'
+import NameFilter from './nameFilter'
 
 class Transformers extends Component {
     constructor(props) {
@@ -22,6 +23,7 @@ class Transformers extends Component {
             <div>
                 <List />
                 <RadioFilter />
+                <NameFilter />
             </div>
         )
     }
