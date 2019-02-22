@@ -20,15 +20,15 @@ const addTransformer = props => {
         const vehicle2 = list || []
 
         if (value == 0) {
-            return vehicle.map((vehicle, i) => {
-                return <option key={i}>{vehicle.group}</option>
+            let hist = []
+            vehicle.map(function (a) {
+                if (!hist.includes(a.group)) {
+                    hist.push(a.group)
+                }
             })
+            return hist.map((vehicle, i) => <option key={i}>{hist[i]}</option>)
         }
-        // if (value == 0) {
-        //     return vehicle2.mapValues(vehicle2.groupBy(vehicle, 'group'), ve => ve.map( v => <option key={i}>{ve.group}</option>))
 
-        //    // return vehicle.map((vehicle, i) => <option key={i}>{vehicle.group}</option>)
-        // }
         if (value == 1) {
             return vehicle.map((vehicle, i) => <option key={i}>{vehicle.type}</option>)
         }
