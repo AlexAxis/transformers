@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux'
 import { fetch } from './transformerActions'
 
 import List from './list'
+import SearchByName from './searchByName'
 
 class Transformers extends Component {
     constructor(props) {
@@ -20,6 +21,7 @@ class Transformers extends Component {
         return (
             <div>
                 <List />
+                <SearchByName />
             </div>
         )
     }
