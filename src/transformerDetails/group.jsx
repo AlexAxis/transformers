@@ -16,32 +16,34 @@ class Group extends Component {
         const vehicle2 = list || []
 
         let hist = []
-            vehicle.map(function (a) {
-                if (!hist.includes(a.group)) {
-                    hist.push(a.group)
-                }
-            })
-            return hist.map((vehicle, i) => <option key={i}>{hist[i]}</option>)
-        
+        vehicle.map(function (original) {
+            if (!hist.includes(original.group)) {
+                hist.push(original.group)
+            }
+        })
+        return hist.map((vehicle, i) => <option key={i}>{hist[i]}</option>)
+
     }
 
 
     handleChange(e) {
         const { tempListAll } = this.props
-        tempListAll(e.target.value, 'group')
+        tempListAll(e.target.value, 'vehicleGroup')
+        tempListAll('', 'vehicleType')
+        tempListAll('', 'vehicleModel')
     }
 
     render() {
         return (
             <select id="group" onChange={this.handleChange}>
-                <option key="-1" value="Select Group">Select Group</option>
+                <option key="-1" value="">Select Group</option>
                 {this.renderGroup()}
             </select>
         )
     }
 }
 //Export the decorated class
-const mapStateToProps = state => ({ tempList: state.transformer.tempList, list: state.transformer.list  })
+const mapStateToProps = state => ({ tempList: state.transformer.tempList, list: state.transformer.list })
 const mapDispatchToProps = dispatch => bindActionCreators({ tempListAll }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Group)

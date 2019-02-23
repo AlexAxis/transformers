@@ -20,8 +20,6 @@ const List = props => {
         const list2 = list.transformers || []
         return list2.map(transformers =>  {
             if ((transformers.faction ==  faction || faction==  'all') && transformers.name.startsWith(name)){
-
-
                 return (<ListItem
                 key={transformers.id}
                 transformer={transformers.name}

@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
     list: [],
 
-    faction: '',
+    faction: 'all',
 
     tempList: {
         "id": '',
