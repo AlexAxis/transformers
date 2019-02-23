@@ -27,9 +27,6 @@ class Details extends Component {
     }
 }
 
-
-
-
 const mapStateToProps = state => ({ list: state.transformer.list })
 const mapDispatchToProps = dispatch => bindActionCreators({ fetch }, dispatch)
 
