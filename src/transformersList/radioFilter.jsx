@@ -12,7 +12,7 @@ const RadioFilter = props => {
         <div>
             <input type="radio" name="faction" onClick={() => changeFaction('0')} /> Autobots
             <input type="radio" name="faction" onClick={() => changeFaction('1')} /> Decepticons
-            <input type="radio" name="faction" onClick={() => changeFaction('all')} /> All
+            <input type="radio" name="faction" defaultChecked onClick={() => changeFaction('all')} /> All
         </div>
     )
 }
