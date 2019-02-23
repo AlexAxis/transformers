@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import Faction from './faction'
+import Status from './status'
 
 
 const addTransformer = props => {
@@ -10,17 +12,16 @@ const addTransformer = props => {
         const faction = list.factions || []
         console.log(faction)
         return faction.map(factions => <option key={factions.id} value={factions.id}>{factions.name}</option>)
-
     }
-
 
     const renderVehicle = (value) => {
         const { list } = props
         const vehicle = list.vehicleTypes || []
         const vehicle2 = list || []
 
+        let hist = []
+        // console.log('---Hist-->'+hist)
         if (value == 0) {
-            let hist = []
             vehicle.map(function (a) {
                 if (!hist.includes(a.group)) {
                     hist.push(a.group)
@@ -46,10 +47,8 @@ const addTransformer = props => {
 
     return (
         <div>
-            <select id="faction">
-                <option key="-1" value="Select one">Select Faction</option>
-                {renderFaction()}
-            </select>
+            <Faction />
+            <Status />
 
             <select id="status">
                 <option key="-1" value="Select one">Select Status</option>
@@ -58,7 +57,7 @@ const addTransformer = props => {
                 <option key="2" value="Select one">MIA</option>
             </select>
 
-            <select id="group">
+            <select id="group" style={{visibility:"visible"}}>
                 <option key="-1" value="Select Group">Select Group</option>
                 {renderVehicle(0)}
             </select>

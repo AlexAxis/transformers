@@ -1,6 +1,19 @@
 const INITIAL_STATE = {
     list: [],
-    faction: 'all',
+
+    faction: '',
+
+    tempList: {
+        "id": '',
+        "name": '',
+        "faction": '',
+        "vehicleGroup": "ola",
+        "vehicleType": "ola",
+        "vehicleModel": "",
+        "gear": [],
+        "status": ""
+    },
+
     name: ''
 }
 //as ACÇÕES
@@ -13,9 +26,15 @@ export default function (state = INITIAL_STATE, action) {
         case 'TRANSFORMER_FETCH':
             return { ...state, list: action.payload }
         case 'FACTION_CHANGE':
-        return { ...state, faction: action.payload }
+            return { ...state, faction: action.payload }
+        case 'TEMP_LIST':
+            return { ...state, tempList: action.payload }
+
+
 
         default:
             return state
     }
 }
+
+

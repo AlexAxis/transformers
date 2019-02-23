@@ -30,3 +30,15 @@ export const changeName = event => ({
     payload: event.target.value
 })
 
+/**
+ * This action is to put a temporary faction at the temporaryList
+ */
+// export const tempStatus = event => ({
+//     type: 'TEMP_STATUS',
+//     payload: event
+// })
+
+export const tempListAction = event => ({
+    type: 'TEMP_LIST',
+    payload: event
+})
