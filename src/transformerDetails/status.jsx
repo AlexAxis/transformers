@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { tempListAction } from '../transformersList/transformerActions'
+import { tempListAll } from '../transformersList/transformerActions'
 
 class Status extends Component {
 
@@ -11,10 +11,9 @@ class Status extends Component {
     }
 
     handleChange(e) {
-        const { tempListAction, tempList } = this.props
-        let tempList2 = tempList
-        tempList2.status = e.target.value
-        tempListAction(tempList2)
+        const { tempListAll } = this.props
+        tempListAll(e.target.value, 'status')
+
     }
 
     render() {
@@ -30,6 +29,6 @@ class Status extends Component {
 }
 //Export the decorated class
 const mapStateToProps = state => ({ tempList: state.transformer.tempList })
-const mapDispatchToProps = dispatch => bindActionCreators({ tempListAction }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ tempListAll }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Status)
