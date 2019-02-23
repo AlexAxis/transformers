@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { tempListAction } from '../transformersList/transformerActions'
+import { tempListAll } from '../transformersList/transformerActions'
 
 class Faction extends Component {
 
@@ -17,14 +17,15 @@ class Faction extends Component {
     }
 
     handleChange(e) {
-        const { tempList, tempListAction } = this.props
-        let tempList2 = tempList
-        tempList2.faction = e.target.value
-        tempListAction(tempList2)
+        const { tempListAll } = this.props
+        //another way...
+        // let tempList2 = tempList
+        // tempList2.faction = e.target.value
+        // tempListAction(tempList2)
+        tempListAll(e.target.value, 'faction')
     }
 
     render() {
-   
         return (
             <select onChange={this.handleChange} id="faction">
                 <option key="-1" value="">Select Faction</option>
@@ -35,6 +36,6 @@ class Faction extends Component {
 }
 //Export the decorated class
 const mapStateToProps = state => ({ list: state.transformer.list, tempList: state.transformer.tempList })
-const mapDispatchToProps = dispatch => bindActionCreators({ tempListAction }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ tempListAll }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Faction)

@@ -31,14 +31,12 @@ export const changeName = event => ({
 })
 
 /**
- * This action is to put a temporary faction at the temporaryList
+ * This next action is to put a temporary faction/status/group/type/model at the temporaryList.
+ * 
+ * The payloadTYPE is to know which variable to change on the temporaryList Object
  */
-// export const tempStatus = event => ({
-//     type: 'TEMP_STATUS',
-//     payload: event
-// })
-
-export const tempListAction = event => ({
+export const tempListAll = (event, event2) => ({
     type: 'TEMP_LIST',
-    payload: event
+    payload: event,
+    payloadTYPE: event2
 })
