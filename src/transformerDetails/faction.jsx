@@ -23,6 +23,7 @@ class Faction extends Component {
         // tempList2.faction = e.target.value
         // tempListAction(tempList2)
         tempListAll(e.target.value, 'faction')
+        
     }
 
     render() {

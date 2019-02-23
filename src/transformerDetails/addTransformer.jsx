@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Faction from './faction'
 import Status from './status'
+import Group from './group'
 
 
 const addTransformer = props => {
@@ -49,26 +50,18 @@ const addTransformer = props => {
         <div>
             <Faction />
             <Status />
+            <Group />
 
-            <select id="status">
-                <option key="-1" value="Select one">Select Status</option>
-                <option key="0" value="Select one">OK</option>
-                <option key="1" value="Select one">Injured</option>
-                <option key="2" value="Select one">MIA</option>
-            </select>
 
-            <select id="group" style={{visibility:"visible"}}>
-                <option key="-1" value="Select Group">Select Group</option>
-                {renderVehicle(0)}
-            </select>
-            <select id="type">
+
+           {/* <select id="type">
                 <option key="-1" value="Select Type">Select Type</option>
                 {renderVehicle(1)}
             </select>
             <select id="model">
                 <option key="-1" value="Select Model">Select Model</option>
                 {renderVehicle(2)}
-            </select>
+    </select>*/}
         </div>
     )
 }

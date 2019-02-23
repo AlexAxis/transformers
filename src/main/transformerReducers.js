@@ -7,14 +7,15 @@ const INITIAL_STATE = {
         "id": '',
         "name": '',
         "faction": '',
-        "vehicleGroup": "ola",
-        "vehicleType": "ola",
+        "vehicleGroup": "",
+        "vehicleType": "",
         "vehicleModel": "",
         "gear": [],
         "status": ""
     },
 
     name: ''
+
 }
 //as ACÇÕES
 //REDUCER (STATE,ACTION)
