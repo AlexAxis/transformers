@@ -17,8 +17,10 @@ class Status extends Component {
     }
 
     render() {
+        const { tempList } = this.props
+        const selected = tempList.status || []
         return (
-            <select onChange={this.handleChange} id="status">
+            <select value={selected} onChange={this.handleChange} id="status">
             <option key="-1" value="">Select Status</option>
                 <option key="0" value="OK">OK</option>
                 <option key="1" value="INJURED">INJURED</option>

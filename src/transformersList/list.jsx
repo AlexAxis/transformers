@@ -36,7 +36,6 @@ const List = props => {
             <thead>
                 <tr>
                     <th>Transformers</th>
-                    <th className='tableActions'>Actions</th>
                 </tr>
             </thead>
             <tbody>

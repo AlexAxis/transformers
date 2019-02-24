@@ -13,15 +13,11 @@ const nameFilter = props => {
             <input 
             id='transformerName' 
             className='form-control' 
-            placeholder='Filter by name' 
+            placeholder={props.placeholder}
             value={name} 
             onChange={changeName}></input>
         )
 }
-
-
-
-
 
 const mapStateToProps = state => ({ name: state.transformer.name })
 const mapDispatchToProps = dispatch => bindActionCreators({ changeName }, dispatch)

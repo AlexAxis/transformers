@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetch } from './transformerActions'
+import { fetch, changeName } from './transformerActions'
 
 import List from './list'
 import RadioFilter from './RadioFilter'
@@ -15,15 +15,16 @@ class Transformers extends Component {
 
 
     componentWillMount() {
-        this.props.fetch()
-    }
+        this.props.fetch();
+        this.props.changeName('');
+        }
 
     render() {
         return (
             <div>
                 <List />
                 <RadioFilter />
-                <NameFilter />
+                <NameFilter placeholder='Filter by name'/>
             </div>
         )
     }
@@ -32,6 +33,6 @@ class Transformers extends Component {
 }
 
 const mapStateToProps = state => ({ list: state.transformer.list })
-const mapDispatchToProps = dispatch => bindActionCreators({ fetch }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ fetch, changeName }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Transformers)
