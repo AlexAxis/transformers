@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
     list: [],
 
-    faction: '',
+    faction: 'all',
 
     tempList: {
         "id": '',
@@ -30,9 +30,7 @@ export default function (state = INITIAL_STATE, action) {
         // case 'TEMP_FACTION':
         //     return { ...state, tempList: { ...state.tempList, faction: action.payload } }
         case 'TEMP_LIST':
-            return { ...state, tempList: { ...state.tempList, [action.payloadTYPE]: action.payload
-    }
-}
+            return { ...state, tempList: { ...state.tempList, [action.payloadTYPE]: action.payload}}
         default:
 return state
     }

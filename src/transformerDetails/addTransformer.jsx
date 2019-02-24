@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Faction from './faction'
 import Status from './status'
+import Name from './name'
+
 
 
 const addTransformer = props => {
@@ -47,6 +49,7 @@ const addTransformer = props => {
 
     return (
         <div>
+            <Name />
             <Faction />
             <Status />
 
