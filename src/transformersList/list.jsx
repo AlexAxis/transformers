@@ -16,10 +16,12 @@ const List = props => {
     *  the result will then be included in a table
     */
     const renderRows = () => {
-        const { fetch, list, faction,name } = props;
+        const { fetch, list, faction, name } = props;
         const list2 = list.transformers || []
         return list2.map(transformers =>  {
-            if ((transformers.faction ==  faction || faction==  'all') && transformers.name.startsWith(name)){
+            if ((transformers.faction ==  faction || faction ==  'all') && transformers.name.startsWith(name)){
+
+
                 return (<ListItem
                 key={transformers.id}
                 transformer={transformers.name}
