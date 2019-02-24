@@ -7,7 +7,6 @@ import Group from './group'
 import Type from './type'
 import Model from './model'
 
-
 const addTransformer = props => {
 
     return (
