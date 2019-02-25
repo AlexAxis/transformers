@@ -27,8 +27,10 @@ class Faction extends Component {
     }
 
     render() {
+        const { tempList } = this.props
+        const selected = tempList.faction || []
         return (
-            <select onChange={this.handleChange} id="faction">
+            <select value={selected} onChange={this.handleChange} id="faction">
                 <option key="-1" value="">Select Faction</option>
                 {this.renderFaction()}
             </select>

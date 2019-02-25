@@ -9,7 +9,6 @@ class ListItem extends React.Component {
         return (
             <tr onClick={() => this.props.router.push(`/transformerDetails/${id}`)}>
                 <td>{transformer}</td>
-                <td>{id}</td>
             </tr>
         )
     }

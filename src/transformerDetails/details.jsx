@@ -21,7 +21,8 @@ class Details extends Component {
         return (
             <div>
                 <h1>Transformer id nª{x} </h1>
-                <AddTransformer />
+                <AddTransformer idTransformer={x} />
+                
             </div>
         )
     }

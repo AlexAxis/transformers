@@ -31,9 +31,14 @@ export default function (state = INITIAL_STATE, action) {
         // case 'TEMP_FACTION':
         //     return { ...state, tempList: { ...state.tempList, faction: action.payload } }
         case 'TEMP_LIST':
-            return { ...state, tempList: { ...state.tempList, [action.payloadTYPE]: action.payload}}
+            return { ...state, tempList: { ...state.tempList, [action.payloadTYPE]: action.payload } }//computed properties name
+        case 'TEMP_LIST_GEAR_REMOVE':
+            return { ...state, tempList: { ...state.tempList, gear: state.tempList.gear.slice(0, action.payload).concat(state.tempList.gear.slice(action.payload+1,state.tempList.gear.length))  } }
+        case 'TEMP_LIST_GEAR_ADD':
+            return { ...state, tempList: { ...state.tempList, gear: state.tempList.gear.concat(action.payload)} }
+
         default:
-return state
+            return state
     }
 }
 
