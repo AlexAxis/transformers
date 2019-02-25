@@ -13,8 +13,7 @@ class Group extends Component {
     renderGroup() {
         const { list } = this.props
         const vehicle = list.vehicleTypes || []
-        const vehicle2 = list || []
-
+        
         let hist = []
         vehicle.map(function (original) {
             if (!hist.includes(original.group)) {

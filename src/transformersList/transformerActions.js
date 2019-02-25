@@ -25,10 +25,22 @@ export const changeFaction = event => ({
  * Action that will have the reference to the reducer that changes the value of the variable 'name' in the store
  *  according to what was introduced by the user in the input element 
  */
-export const changeName = event => ({
-    type: 'NAME_CHANGE',
-    payload: event.target.value
-})
+export const changeName = event => {
+    if (event == ''){
+        return {
+            type: 'NAME_CHANGE',
+            payload: event
+        }
+    }  else {
+        return {
+            type: 'NAME_CHANGE',
+            payload: event.target.value
+        }
+    }  
+
+}
+
+
 
 /**
  * This next action is to put a temporary faction/status/group/type/model at the temporaryList.
