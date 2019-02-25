@@ -33,8 +33,10 @@ class Group extends Component {
     }
 
     render() {
+        const { tempList } = this.props
+        const selected = tempList.vehicleGroup || []
         return (
-            <select id="group" onChange={this.handleChange}>
+            <select value={selected} id="group" onChange={this.handleChange}>
                 <option key="-1" value="">Select Group</option>
                 {this.renderGroup()}
             </select>

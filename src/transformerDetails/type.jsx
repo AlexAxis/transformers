@@ -11,20 +11,6 @@ class Type extends Component {
     }
 
     renderType() {
-        // const { list } = this.props
-        // const vehicle = list.vehicleTypes || []
-        // const vehicle2 = list || []
-
-        // let hist = []
-        //     vehicle.map(function (a) {
-        //         if (!hist.includes(a.type)) {
-        //             hist.push(a.type)
-        //         }
-        //     })
-        //     return hist.map((vehicle, i) => <option key={i}>{hist[i]}</option>)
-
-
-
         const { tempList } = this.props
         const group = tempList.vehicleGroup || []
         

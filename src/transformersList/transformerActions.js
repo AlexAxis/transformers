@@ -1,5 +1,6 @@
 import axios from 'axios'
 const URL = 'http://localhost:3000/db'
+const URLtransformers = 'http://localhost:3000/transformers'
 
 /**
  * This funciton is responsible to fetch the data from endpoint
@@ -39,7 +40,10 @@ export const changeName = event => {
     }  
 
 }
-
+// export const changeWeapon = event => ({
+//     type: 'WEAPON_CHANGE',
+//     payload: event.target.value
+// })
 
 
 /**
@@ -52,3 +56,40 @@ export const tempListAll = (event, event2) => ({
     payload: event,
     payloadTYPE: event2
 })
+
+/**
+ * this funcitons are to remove/add a gear
+ */
+export const removeGear = (event) => ({
+    type: 'TEMP_LIST_GEAR_REMOVE',
+    payload: event
+})
+
+export const addGear = (event) => ({
+    type: 'TEMP_LIST_GEAR_ADD',
+    payload: event
+})
+
+/**
+ * this function insert the transformer to the database and calls the action that refresh the list (get)
+ */
+export const insertTransformer = (list, id) => {
+    return dispatch => {
+        axios.post(URLtransformers, {id, name: list.name, faction: list.faction, vehicleGroup: list.vehicleGroup, vehicleType: list.vehicleType, vehicleModel: list.vehicleModel, gear: list.gear, status:list.status})
+            .then(resp => dispatch(fetch()))
+    }
+}
+
+export const updateTransformer = (list, id) => {
+    return dispatch => {
+        axios.put(URLtransformers, {id, name: list.name, faction: list.faction, vehicleGroup: list.vehicleGroup, vehicleType: list.vehicleType, vehicleModel: list.vehicleModel, gear: list.gear, status:list.status})
+            .then(resp => dispatch(fetch()))
+    }
+}
+
+export const deleteTransformer = (id) => {
+    return dispatch => {
+        axios.put(`${URLtransformers}/${id}`)
+            .then(resp => dispatch(fetch()))
+    }
+}
